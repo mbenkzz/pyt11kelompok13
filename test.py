@@ -1,8 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import re
+import numpy as np
+import re # regular expression
 
-# Load the dataset
 df = pd.read_csv('./csv/Travel details dataset.csv')
 
 # drop the rows with missing values
@@ -20,23 +20,18 @@ pattern = re.compile(r'\d+(,\d+)*\.?\d*')
 df['Accommodation cost'] = df['Accommodation cost'].apply(lambda x: float(pattern.search(x).group().replace(',', '')) if pattern.search(x) else None)
 df['Transportation cost'] = df['Transportation cost'].apply(lambda x: float(pattern.search(x).group().replace(',', '')) if pattern.search(x) else None)
 
-# Count the number of trips per destination
-trips_per_destination = df['Destination'].value_counts()
+# box chart with x = accomodation_type y=accomodation_cost
+# for accomodation_type in df['Accommodation type'].unique():
+#     data = df[df['Accommodation type'] == accomodation_type]['Accommodation cost']
+#     print(data)
+    # plt.boxplot(df[df['Accommodation type'] == accomodation_type]['Accommodation cost'], positions=[accomodation_type])
+labels = df['Accommodation type'].unique()
+    
+all_data = [df[df['Accommodation type'] == accomodation_type]['Accommodation cost'] for accomodation_type in labels]
 
-# Create a bar chart
-plt.bar(x=trips_per_destination.index, height=trips_per_destination.values)
-plt.xlabel('Destination')
-plt.ylabel('Number of Trips')
-plt.xticks(rotation=360-90)
+plt.boxplot(all_data, labels=labels)
+
+plt.xlabel('Accommodation Type')
+plt.ylabel('Accommodation Cost')
 
 plt.show()
-
-# # Create a bar chart
-# fig = px.bar(x=trips_per_destination.index, y=trips_per_destination.values,
-#              labels={'x': 'Destination', 'y': 'Number of Trips'},
-#              title='Number of Trips per Destination')
-# fig.show()
-
-# print(df.info())
-# print(df.isna().sum())
-# print(list(df['Accommodation cost'].head(20)))
