@@ -34,8 +34,8 @@ def show_chart_1():
     ax.bar(x=trips_per_destination.index, height=trips_per_destination.values)
     fig.subplots_adjust(bottom=0.3)
     # plt.bar(x=trips_per_destination.index, height=trips_per_destination.values)
-    plt.xlabel('Destination')
-    plt.ylabel('Number of Trips')
+    plt.xlabel('Tujuan Wisata')
+    plt.ylabel('Jumlah')
     plt.xticks(rotation=360-90)
 
     plt.show()
@@ -46,7 +46,7 @@ def show_chart_2():
     trips_per_accommodation_type = df['Accommodation type'].value_counts()
     
     plt.pie(x=trips_per_accommodation_type.values, labels=trips_per_accommodation_type.index, autopct='%1.1f%%')
-    plt.title('Accommodation Type Distribution')
+    plt.title('Tipe Akomodasi')
     plt.show()
 
 # Number of trips per month
@@ -79,12 +79,12 @@ def show_chart_3():
         fig.subplots_adjust(bottom=.15)
         plt.plot(trips_per_month.index, trips_per_month.values)
         plt.xticks(rotation=360-90)
-        plt.xlabel('Month')
+        plt.xlabel('Bulan')
     if inp.upper() == 'Y':
         plt.bar(x=trips_per_month.index, height=trips_per_month.values)
-        plt.xlabel('Year')
+        plt.xlabel('Tahun')
     
-    plt.ylabel('Number of Trips')
+    plt.ylabel('Jumlah')
     plt.show()
 
 # Travel Nationalist
@@ -94,8 +94,8 @@ def show_chart_4():
     fig, ax = plt.subplots(figsize=(10, 5))
     fig.subplots_adjust(bottom=.25)
     plt.bar(x=nationalities.index, height=nationalities.values)
-    plt.xlabel("Country")
-    plt.ylabel("Number of Trips")
+    plt.xlabel("Negara asal wisatawan")
+    plt.ylabel("Jumlah")
     plt.xticks(rotation=360-90)
     plt.show()
 
@@ -110,8 +110,8 @@ def show_chart_5():
     all_data = [df[df['Accommodation type'] == accomodation_type]['Accommodation cost'] for accomodation_type in labels]
     plt.boxplot(all_data, labels=labels)
         
-    plt.xlabel('Accommodation Type')
-    plt.ylabel('Accommodation Cost')
+    plt.xlabel('Tipe Akomodasi')
+    plt.ylabel('Biaya Akomodasi')
     
     plt.show()
 
@@ -122,6 +122,6 @@ def show_chart_6():
     fig, ax = plt.subplots(figsize=(6, 3))
     
     plt.pie(x=gender_counts.values, labels=gender_counts.index, autopct='%1.1f%%')
-    plt.title('Number of Trips per Gender')
+    plt.title('Data Wisatawan Berdasarkan Jenis Kelamin')
     plt.show()
     
