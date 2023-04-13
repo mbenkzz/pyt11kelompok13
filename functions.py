@@ -99,19 +99,20 @@ def show_chart_4():
     plt.xticks(rotation=360-90)
     plt.show()
 
-# Trip Duration and Accommodation Cost by Destination
+# Transportation cost by Accomodation type
 def show_chart_5():
-    """Trip Duration and Accommodation Cost by Destination"""
+    """Transportation cost by Accomodation type"""
     # plt.figure(figsize=(10, 5))
     
     # box chart with x = accomodation_type y=accomodation_cost
     labels = df['Accommodation type'].unique()
     
-    all_data = [df[df['Accommodation type'] == accomodation_type]['Accommodation cost'] for accomodation_type in labels]
+    all_data = [df[df['Accommodation type'] == accomodation_type]['Transportation cost'] for accomodation_type in labels]
     plt.boxplot(all_data, labels=labels)
         
     plt.xlabel('Tipe Akomodasi')
-    plt.ylabel('Biaya Akomodasi')
+    plt.ylabel('Biaya Transportasi')
+    plt.title('Biaya Transportasi Berdasarkan Tipe Akomodasi')
     
     plt.show()
 
@@ -121,7 +122,12 @@ def show_chart_6():
     
     fig, ax = plt.subplots(figsize=(6, 3))
     
-    plt.pie(x=gender_counts.values, labels=gender_counts.index, autopct='%1.1f%%')
+    labels_name = {'Male': 'Laki Laki', 'Female': 'Perempuan'}
+    labels_color = {'Male': '#3258a8', 'Female': '#f59dd0'} # blue and pink
+    label = gender_counts.index.map(lambda x: labels_name[x])
+    colors = gender_counts.index.map(lambda x: labels_color[x])
+    
+    plt.pie(x=gender_counts.values, labels=label, autopct='%1.1f%%', colors=colors)
     plt.title('Data Wisatawan Berdasarkan Jenis Kelamin')
     plt.show()
     

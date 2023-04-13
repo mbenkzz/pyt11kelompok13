@@ -11,7 +11,7 @@ if __name__ == "__main__":
             print("2 - Distribusi Tipe Akomodasi")
             print("3 - Jumlah Trip per Bulan/Tahun")
             print("4 - Asal Negara Wisatawan")
-            print("5 - Durasi Perjalanan dan Harga Akomodasi Berdasarkan Tujuan")
+            print("5 - Biaya Transportasi Berdasarkan Tipe Akomodasi")
             print("6 - Data Wisatawan Berdasarkan Jenis Kelamin")
             print("7 - Keluar")
             choices = input("> ")
