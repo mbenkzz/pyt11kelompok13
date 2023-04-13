@@ -69,7 +69,7 @@ Trip ID,Destination,Start date,End date,Duration (days),Traveler name,Traveler a
 68,New York,2022-07-20,2022-07-26,6.0,James Chen,25.0,Male,American,Vacation rental,1000,Plane,800
 69,Bangkok,2022-09-08,2022-09-16,8.0,Lila Patel,33.0,Female,Indian,Hostel,300,Plane,700
 70,Rome,2023-02-14,2023-02-20,6.0,Marco Rossi,41.0,Male,Italian,Hotel,1300,Train,100
-71,Bali,2023-05-21,2023-05-29,8.0,Sarah Brown,37.0,Female,British,Resort,1800,Plane,1000
+71,Bali,2023-03-21,2023-03-29,8.0,Sarah Brown,37.0,Female,British,Resort,1800,Plane,1000
 72,,,,,,,,,,,,
 73,"Bali, Indonesia",2020-08-05,2020-08-12,7.0,Sarah Lee,35.0,Female,South Korean,Resort,500 USD,Plane,800 USD
 74,"Tokyo, Japan",2021-01-01,2021-01-09,8.0,Alex Kim,29.0,Male,American,Hotel,1000 USD,Train,200 USD
