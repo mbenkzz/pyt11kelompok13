@@ -39,7 +39,6 @@ def show_chart_1():
     plt.xticks(rotation=360-90)
 
     plt.show()
-    return True
 
 # Accomodation type distribution
 def show_chart_2():
@@ -49,7 +48,6 @@ def show_chart_2():
     plt.pie(x=trips_per_accommodation_type.values, labels=trips_per_accommodation_type.index, autopct='%1.1f%%')
     plt.title('Accommodation Type Distribution')
     plt.show()
-    return True
 
 # Number of trips per month
 def show_chart_3():
@@ -88,7 +86,6 @@ def show_chart_3():
     
     plt.ylabel('Number of Trips')
     plt.show()
-    return True
 
 # Travel Nationalist
 def show_chart_4():
@@ -101,7 +98,6 @@ def show_chart_4():
     plt.ylabel("Number of Trips")
     plt.xticks(rotation=360-90)
     plt.show()
-    return True
 
 # Trip Duration and Accommodation Cost by Destination
 def show_chart_5():
@@ -118,5 +114,14 @@ def show_chart_5():
     plt.ylabel('Accommodation Cost')
     
     plt.show()
-        
-    return True
+
+def show_chart_6():
+    """Number of Trips per Gender"""
+    gender_counts = df['Traveler gender'].value_counts()
+    
+    fig, ax = plt.subplots(figsize=(6, 3))
+    
+    plt.pie(x=gender_counts.values, labels=gender_counts.index, autopct='%1.1f%%')
+    plt.title('Number of Trips per Gender')
+    plt.show()
+    
