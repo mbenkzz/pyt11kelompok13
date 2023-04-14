@@ -28,7 +28,6 @@ def show_chart_1():
     trips_per_destination = df['Destination'].value_counts()
     
     # create smaller figure
-    
     fig, ax = plt.subplots(figsize=(6, 3))
     
     ax.bar(x=trips_per_destination.index, height=trips_per_destination.values)
@@ -47,6 +46,7 @@ def show_chart_2():
     
     plt.pie(x=trips_per_accommodation_type.values, labels=trips_per_accommodation_type.index, autopct='%1.1f%%')
     plt.title('Tipe Akomodasi')
+    
     plt.show()
 
 # Number of trips per month
@@ -85,24 +85,27 @@ def show_chart_3():
         plt.xlabel('Tahun')
     
     plt.ylabel('Jumlah')
+    
     plt.show()
 
 # Travel Nationalist
 def show_chart_4():
     """Travel Nationalist"""
     nationalities = df['Traveler nationality'].value_counts()
+    
     fig, ax = plt.subplots(figsize=(10, 5))
     fig.subplots_adjust(bottom=.25)
+    
     plt.bar(x=nationalities.index, height=nationalities.values)
     plt.xlabel("Negara asal wisatawan")
     plt.ylabel("Jumlah")
     plt.xticks(rotation=360-90)
+    
     plt.show()
 
 # Transportation cost by Accomodation type
 def show_chart_5():
     """Transportation cost by Accomodation type"""
-    # plt.figure(figsize=(10, 5))
     
     # box chart with x = accomodation_type y=accomodation_cost
     labels = df['Accommodation type'].unique()
@@ -124,12 +127,13 @@ def show_chart_6():
     
     fig, ax = plt.subplots(figsize=(6, 3))
     
-    labels_name = {'Male': 'Laki Laki', 'Female': 'Perempuan'}
+    labels_name = {'Male': 'Laki Laki', 'Female': 'Perempuan'} # translation purpose
     labels_color = {'Male': '#3258a8', 'Female': '#f59dd0'} # blue and pink
     label = gender_counts.index.map(lambda x: labels_name[x])
     colors = gender_counts.index.map(lambda x: labels_color[x])
     
     plt.pie(x=gender_counts.values, labels=label, autopct='%1.1f%%', colors=colors)
     plt.title('Data Wisatawan Berdasarkan Jenis Kelamin')
+    
     plt.show()
     
