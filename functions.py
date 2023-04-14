@@ -109,6 +109,8 @@ def show_chart_5():
     
     all_data = [df[df['Accommodation type'] == accomodation_type]['Transportation cost'] for accomodation_type in labels]
     plt.boxplot(all_data, labels=labels)
+    
+    plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda x, loc: "${:,}".format(int(x))))
         
     plt.xlabel('Tipe Akomodasi')
     plt.ylabel('Biaya Transportasi')
