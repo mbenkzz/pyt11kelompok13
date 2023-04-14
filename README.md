@@ -34,7 +34,7 @@ python main.py
 ## Struktur Folder
 
 - csv: Folder yg berisi data-data yg digunakan
-- __pycache__: Folder yg berisi cache python (akan dibuat otomatis saat menjalankan program)
+- \_\_pycache\_\_: Folder yg berisi cache python (akan dibuat otomatis saat menjalankan program)
 - readme.MD: File ini
 
 ## Struktur File
