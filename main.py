@@ -2,7 +2,7 @@ import functions as f
 
 if __name__ == "__main__":
     
-    # try:
+    try:
         print("Menu Analisis Data Wisatawan")
         
         while True:
@@ -40,7 +40,7 @@ if __name__ == "__main__":
             else:
                 print("Masukkan angka 1-7")
             
-    # except KeyboardInterrupt:
-    #     print("Anda telah menekan CTRL+C. Program terhenti")
-    # except Exception as e:
-    #     print("Kesalahan terjadi, pesan error : {}".format(e))
+    except KeyboardInterrupt:
+        print("Anda telah menekan CTRL+C. Program terhenti")
+    except Exception as e:
+        print("Kesalahan terjadi, pesan error : {}".format(e))
